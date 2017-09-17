@@ -1,0 +1,83 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ah.dagbow.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="45sp"
+            android:gravity="center_horizontal"
+            android:text="@string/app_name"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button android:id="@+id/new_button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/new_game_button"/>
+
+        <Button android:id="@+id/cont_button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/continue_button"/>
+
+        <Button android:id="@+id/overview_button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/overview_button"/>
+
+        <Button android:id="@+id/achievements_button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/achievements_button"/>
+        <Button android:id="@+id/day_night_button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/day_night_mode"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="bottom">
+
+        <TextView android:id="@+id/author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:keepScreenOn="true"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:text="@string/author" />
+        <TextView android:id="@+id/app_dev"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:keepScreenOn="true"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_below="@id/author"
+            android:text="@string/app_dev" />
+        <TextView android:id="@+id/comapny"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:keepScreenOn="true"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_below="@id/app_dev"
+            android:text="@string/company_name" />
+
+    </RelativeLayout>
+
+</FrameLayout>

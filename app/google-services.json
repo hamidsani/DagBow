@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "145106030203",
+    "firebase_url": "https://daggers-n-bows.firebaseio.com",
+    "project_id": "daggers-n-bows",
+    "storage_bucket": "daggers-n-bows.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145106030203:android:6da917cbba4d6b67",
+        "android_client_info": {
+          "package_name": "com.ah.dagbow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "145106030203-99fr1d4i9aau044plr889848nf0963lc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ah.dagbow",
+            "certificate_hash": "206dc4dbbe87be3dbbe5cb8c417ed9a3e1a74b0e"
+          }
+        },
+        {
+          "client_id": "145106030203-52s2m5fhc1ptogkcjpst8cgassf48i9l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ah.dagbow",
+            "certificate_hash": "c70a1cb806d042188ab4edef49179b762be7cbc4"
+          }
+        },
+        {
+          "client_id": "145106030203-vruc59h938kqfe40bl813dvgif9ei3fd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdD-M9nTDDwGsdq1Si__XAR6Oa5mByD-g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "145106030203-vruc59h938kqfe40bl813dvgif9ei3fd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

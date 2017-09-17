@@ -1,0 +1,135 @@
+<resources>
+    <string name="app_name">Daggers &amp; Bows</string>
+
+    <string name="splash">Daggers and Bows</string>
+    <string name="author">Author: Alireza Sani</string>
+    <string name="app_dev">App dev: Hamid Sani</string>
+    <string name="company_name">Company: A&amp;H</string>
+    <string name="company_logo">Company Logo</string>
+    <string name="new_game_button">New Journey!</string>
+    <string name="continue_button">Continue</string>
+    <string name="overview_button">Journey Overview</string>
+    <string name="achievements_button">Achievements</string>
+    <string name="day_night_mode">Day/Night Mode</string>
+
+
+    <string name="chapter_1">Chapter 1</string>
+    <string name="chapter_1_1s">Once Upon a time...</string>
+    <string name="chapter_1_1">The wind had spread the horrid smell that permeated through the compound.
+        It was a smell of death and of decay. Joth slowly opened his eyes. First the world was blurry but soon his eyes got used to the dark surroundings.
+        Joth tried to sit up however a searing pain in his side almost made him scream. A simple touch later and Joth’s worst fears became reality.
+        As luck would have it no vital organs on his side seemed damaged as the armor had done its job and the stab to Joth’s side seemed shallow.
+        The bad news was that the wound was bleeding a small but steady stream of blood.
+        There was no telling how long he was bleeding though the blood collected in his breastplate had scarcely touched the ground.\n\n
+
+        If Joth was to make his way down the mountain and into a local village for medical attention then he needed to act now.
+        From the feel of the wound and the fact that it was from a dagger Joth knew that he needed professional help from a doctor or an alchemist but ideally both.
+        From the looks of this place Joth knew that the compound was fully sacked and he left to die in the rubbles. Then there was the problem of Elain his sister.
+        Joth had a suspicion that the attack on the compound was half motivated by putting down his Grod Vim clan of assassins and sweetened buy the idea that the attackers could get their hands on Elain.
+        After all Elain was special.\n\n
+
+        But Joth had no time to be thinking of her. He saw her being dragged and yet Elain’s value was known to her captors.
+        Joth had to save her but there was no point in being reckless seeing as her life was not in danger. If Joth were to die here it would scarcely help Elain’s odds.
+        Joth needed to path up and then make his way to town to gather reinforcements before even thinking of breaking her out.
+        Some of his father’s contacts could help at this point but first he had to make it to the village and for that the wound needed dressing.
+        But first, Joth was in desperate need of satiating his thirst.\n
+    </string>
+
+    <string name="chapter_1_2">Go to the well</string>
+    <string name="chapter_1_2t">Joth makes his way to the well liming and cursing from the pain on his sides. The water well is no longer recognizable as it is half in flames.
+        There seems to be too many corpses floating in the water down below for the water to be in any drinking shape.
+        No doubt excrement, urine, and blood made their way in making the drinking water not only disgusting but also lethal to drink.
+        There was no sense in being hydrated now just to die of dysentery later.
+        Part of Joth’s assassin training was to learn of all the pitfalls that awaited an assassin in the wild and drinking from contaminated sources would not help with that even though by this point Joth is desperate.</string>
+
+    <string name="chapter_1_3">Search the corpses</string>
+    <string name="chapter_1_3t">Suddenly it dawns on him that of the few corpses strewn around the courtyard at least one should have a water bottle or two.
+        Clan Grod Vim’s men were known to carry water and provisions so he tried to find soldiers of his clan hoping that the enemies had not pillaged the corpses long enough to strip their bare necessity unlike what they had done to all the weapons that oddly missing from every corpse.\n\n
+
+        The first water bottle was empty and the second one was punctured with all the fluid missing. Joth’s fate seemed sealed when a voice whispered: “Where is your sister boy?”
+        Joth looked around and there lay his uncle with his back firmly against the wall as he was propping himself on a misshapen stick.
+        Joth rushed to the old man’s aid but he had three arrows sticking out of his chest and firmly lodged in his ribs.
+        He was no doubt bleeding inside and there was nothing Joth or any miracle worker or magician could do for his old uncle.\n\n
+
+        “Did they take your sister boy?” His uncle asked with a raspy voice though Joth was in awe of how the old man could muster enough strength for words.
+        “You make your way to village then from there to town. In the town we have enough contacts to help you get back your sister.
+        Elain may be too strong for her own good but if left there’s no telling what these animals will do to her in the long run. That being said you can’t rush it boy.
+        You need a good few weeks to formulate a plan. Since you completed your training you should have a book with all our contacts inscribed in it. Go to these men and women and get help.
+        Just remember not to trust anyone other than direct contacts. Not the Emperor and especially not that bastard of a Duke. These are all his men strewn about the place.
+        Moving forward rely on your training Joth! You may have no field experience but you were trained by the best. You are ready.”\n\n
+
+        Joth nodded as tears began to roll down his cheeks. He might have been a Grod Vim but the sight of his old uncle drenched in blood and those arrows sticking out of him reminded him of losing his parents along with all his clan members and friends earlier.
+        This all was proving too much for the sixteen year old.\n\n
+
+        “Calm down, boy! They may have taken us out but we killed our numbers five times over. The Duke is reeling right now from the number of casualties.
+        That’s why the left in such a hurry and only took the weapons and the gold with them instead of ransacking the whole place and removing all the valuables.
+        By all rights I should be naked now as some fool of a mercenary or a regular guard lays claim to my armor. In the end we taught the bastards that the house of bows and daggers is not to be trifled with.”
+        With that the old man patted Joth’s head and the boy forced a smile as his uncle let out a sad laugh. The crest of the family was that of bow and daggers and their banner was still waving over the compound.\n\n
+
+        The old man’s weighty hand on Joth’s shoulder however forced him to let out a cry of pain as his wound was acting up. His uncle touched the side of his armor and noticed the puncture wound in the lining.
+        The old man moved painfully as he handed Joth a bottle of water and Joth wasted no time in drinking from the bottle. “Gentle boy! Are you still bleeding?”\n\n
+
+        Joth nodded and his uncle presented him with an option: “Well you have two options. First is to get a hot poker from the smithy.
+        I know the smith kept them around as a crude and dirty way to close the wounds during the siege as the medicine ran dry. It’s going to hurt like a bitch.
+        Burt wound is going to leave an ugly scar and it’s going to be a pain to heal and keep clean. The other option is some bandages and a needle and string to stitch the wound for now until you get some proper attention.
+        Either you’ll pass out from the pain or scream and need moments to rest so you’ll better act now so I can stand watch over you while I’m still alive.”\n\n
+
+        Suddenly the old man grabbed Joth by the throat and pulled him close enough that Joth could smell the blood on his uncle. The old man gathered all his power and conviction and tried to reason with his nephew:
+        “You… get your sister, Elain, and you get her to safety. Out there is the real world, boy. The real world has no time for heroics.
+        You kill whoever you have to, even stab them in the back if forced to, and then you leave with your sister away from fighting and all the death. Forget me, your mother, or your father.
+        We were killers and we knew the risk. If we didn’t die in this attack we’d die some other way. You save yourself and forget all about us. Just live boy…” \n\n
+
+        Joth wanted to argue with the old man but deep down he knew that he was right. There was no time to waste.\n\n
+    </string>
+
+    <string name="chapter_1_4a">Cauterize the wound</string>
+    <string name="chapter_1_4at">It was not too hard to find the poker and Joth soon came back to his uncle.
+        Joth had to wait a while for the poker to cool down from the red hot temperature otherwise he could seriously burn himself and that would bring greater harm than good.
+        The old man advised Joth to lodge a folded tough fabric in his mouth in order to prevent him from damaging his teeth in the process.
+        The pain of the burning flesh was unbearable and Joth passed out after screaming from the bottom of his soul. The last image he remembered was that of his uncle’s sad and concerned look.\n\n
+
+        As he awoke, Joth spat out the fabric and cursed once or twice before getting a bearing of his surroundings.\n\n
+    </string>
+
+    <string name="chapter_1_4b">Stitch the wound</string>
+    <string name="chapter_1_4bt">It was took a while for Joth to find a needle and some thread.
+        As luck would have it the needle was a bit think for stitching work which spelled a great deal of pain but beggars could hardly be choosers.
+        The old man advised Joth to lodge a folded tough fabric in his mouth in order to prevent him from damaging his teeth in the process.
+        The pain of each stab at Joth’s flesh was unbearable and yet Joth prevailed though he screamed from the bottom of his soul every time the needle met flesh.
+        By the time he was done, Joth was ready for a break to let the wound set before walking around so he sat and closed his eyes before removing the fabric from his mouth.
+        The last image he remembered was that of his uncle’s sad and concerned look.\n\n
+
+        Joth awoke to a silence and began looking around at his surroundings.\n\n
+    </string>
+
+    <string name="chapter_1_5a">Go south</string>
+    <string name="chapter_1_5at">Walked south\n\n</string>
+
+    <string name="chapter_1_5b">Go north</string>
+    <string name="chapter_1_5bt">Walked north\n\n</string>
+
+    <string name="chapter_1_5c">Go west</string>
+    <string name="chapter_1_5ct">Walked west\n\n</string>
+
+
+    <string name="chapter_1_6a">Go south-south</string>
+    <string name="chapter_1_6at">Walked south-south\n\n</string>
+
+    <string name="chapter_1_6b">Go south-west</string>
+    <string name="chapter_1_6bt">Walked south-west\n\n</string>
+
+    <string name="chapter_1_6c">Go south-east</string>
+    <string name="chapter_1_6ct">Walked south-east\n\n</string>
+
+    <string name="chapter_1_6d">Go north-north</string>
+    <string name="chapter_1_6dt">Walked north-north\n\n</string>
+
+    <string name="chapter_1_6e">Go north-west</string>
+    <string name="chapter_1_6et">Walked north-west\n\n</string>
+
+    <string name="chapter_1_6f">Go north-east</string>
+    <string name="chapter_1_6ft">Walked north-east\n\n</string>
+
+    <string name="chapter_1_6h">Died</string>
+    <string name="chapter_1_6ht">Died\n\n</string>
+</resources>
