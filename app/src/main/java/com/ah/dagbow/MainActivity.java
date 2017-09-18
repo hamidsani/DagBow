@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences sharedPref;
 
     public List<Choice> PlayerChoices = new ArrayList<>();
-    public Choice c_001_1, c_002_1, c_003_1, c_004_1, c_004_2, c_005_1,c_005_2,c_005_3,c_006_1,c_006_2,c_006_3,c_006_4,c_006_5,c_006_6,c_006_7;
+    public Choice c_001_1, c_002_1, c_003_1, c_004_1, c_004_2, c_005_1,c_005_2,c_006_1,c_006_2,c_007_1,c_007_2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -137,26 +137,23 @@ public class MainActivity extends AppCompatActivity {
 
     private void initializeStory(){
         Resources res = getResources();
-        c_001_1 = new Choice("n001_1", res.getString(R.string.chapter_1_1s),res.getString(R.string.chapter_1_1) , res.getString(R.string.chapter_1));
+        c_001_1 = new Choice("n001_1", res.getString(R.string.chapter_1_1),res.getString(R.string.chapter_1_1t) , res.getString(R.string.chapter_1));
 
         c_002_1 = new Choice("n002_1", res.getString(R.string.chapter_1_2), res.getString(R.string.chapter_1_2t));
 
         c_003_1 = new Choice("n003_1", res.getString(R.string.chapter_1_3), res.getString(R.string.chapter_1_3t));
 
-        c_004_1 = new Choice("n004_1", res.getString(R.string.chapter_1_4a), res.getString(R.string.chapter_1_4at));
-        c_004_2 = new Choice("n004_2", res.getString(R.string.chapter_1_4b), res.getString(R.string.chapter_1_4bt));
+        c_004_1 = new Choice("n004_1", res.getString(R.string.chapter_1_4a), res.getString(R.string.chapter_1_4at) + res.getString(R.string.chapter_1_4st));
+        c_004_2 = new Choice("n004_2", res.getString(R.string.chapter_1_4b), res.getString(R.string.chapter_1_4bt) + res.getString(R.string.chapter_1_4st));
 
         c_005_1 = new Choice("n005_1", res.getString(R.string.chapter_1_5a), res.getString(R.string.chapter_1_5at));
         c_005_2 = new Choice("n005_2", res.getString(R.string.chapter_1_5b), res.getString(R.string.chapter_1_5bt));
-        c_005_3 = new Choice("n005_3", res.getString(R.string.chapter_1_5c), res.getString(R.string.chapter_1_5ct));
 
         c_006_1 = new Choice("n006_1", res.getString(R.string.chapter_1_6a), res.getString(R.string.chapter_1_6at));
         c_006_2 = new Choice("n006_2", res.getString(R.string.chapter_1_6b), res.getString(R.string.chapter_1_6bt));
-        c_006_3 = new Choice("n006_3", res.getString(R.string.chapter_1_6c), res.getString(R.string.chapter_1_6ct));
-        c_006_4 = new Choice("n006_4", res.getString(R.string.chapter_1_6d), res.getString(R.string.chapter_1_6dt));
-        c_006_5 = new Choice("n006_5", res.getString(R.string.chapter_1_6e), res.getString(R.string.chapter_1_6et));
-        c_006_6 = new Choice("n006_6", res.getString(R.string.chapter_1_6f), res.getString(R.string.chapter_1_6ft));
-        c_006_7 = new Choice("n006_7", res.getString(R.string.chapter_1_6h), res.getString(R.string.chapter_1_6ht));
+
+        c_007_1 = new Choice("n007_1", res.getString(R.string.chapter_1_7a), res.getString(R.string.chapter_1_7at));
+        c_007_2 = new Choice("n007_2", res.getString(R.string.chapter_1_7b), res.getString(R.string.chapter_1_7bt));
 
         // add the vertices
         c_001_1.addChild(c_002_1);
@@ -168,17 +165,13 @@ public class MainActivity extends AppCompatActivity {
 
         c_004_1.addChild(c_005_1);
         c_004_1.addChild(c_005_2);
-        c_004_1.addChild(c_005_3);
         c_004_2.addChild(c_005_1);
         c_004_2.addChild(c_005_2);
-        c_004_2.addChild(c_005_3);
 
         c_005_1.addChild(c_006_1);
         c_005_1.addChild(c_006_2);
-        c_005_1.addChild(c_006_3);
-        c_005_2.addChild(c_006_4);
-        c_005_2.addChild(c_006_5);
-        c_005_2.addChild(c_006_6);
-        c_005_3.addChild(c_006_7);
+
+        c_006_1.addChild(c_007_1);
+        c_006_1.addChild(c_007_2);
     }
 }

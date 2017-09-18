@@ -21,29 +21,6 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <!--<TextView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:textStyle="bold"-->
-                <!--android:textSize="20sp"-->
-                <!--android:paddingBottom="20dp"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:text="@string/chapter_1"/>-->
-
-            <!--<TextView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:scrollbars="none"-->
-                <!--android:textSize="16sp"-->
-                <!--android:text="@string/chapter_1_1"-->
-                <!--android:layout_marginBottom="50dp"/>-->
-
-            <!--<Button-->
-                <!--android:id="@+id/option1"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="@string/chapter_1_2"-->
-                <!--android:layout_marginBottom="200dp"/>-->
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

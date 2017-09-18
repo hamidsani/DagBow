@@ -73,7 +73,7 @@ public class StoryFragment extends Fragment {
         params.setMargins(0, 0, 0, padding(50));
         body.setLayoutParams(params);
         body.setTextSize(TypedValue.COMPLEX_UNIT_SP,16);
-        body.setGravity(Gravity.CENTER_HORIZONTAL);
+        body.setGravity(Gravity.START);
         (linearLayout).addView(body);
 
         if (choice.getNumberOfChildren() != 0){

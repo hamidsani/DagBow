@@ -1,5 +1,7 @@
 package com.ah.dagbow.Common;
 
+import com.ah.dagbow.Common.Character;
+
 //import com.scalified.tree.TreeNode;
 //import com.scalified.tree.multinode.ArrayMultiTreeNode;
 /**
@@ -34,8 +36,6 @@ public class Choice {
     public String getContent(){ return this.sContent;}
     public String getName(){ return this.sName;}
     public String getTitle(){ return this.sTitle;}
-
-
 
     public void addChild(Choice child){
         children[this.iChildrenNum++] = child;
