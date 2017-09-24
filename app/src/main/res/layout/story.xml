@@ -1,15 +1,24 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.ah.dagbow.MainActivity">
 
-    <!-- The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc. -->
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimaryDark"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="Chapter *"
+        android:textSize="25sp" />
+
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
+            android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none">
 
@@ -23,4 +32,4 @@
 
         </LinearLayout>
     </ScrollView>
-</FrameLayout>
+</LinearLayout>

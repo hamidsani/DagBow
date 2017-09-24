@@ -5,26 +5,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
-import android.os.Handler;
-import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 
 import com.ah.dagbow.Common.Choice;
-import com.ah.dagbow.Common.Constants;
 import com.ah.dagbow.Fragments.MainFragment;
-import com.ah.dagbow.Fragments.SplashFragment;
 import com.ah.dagbow.Fragments.StoryFragment;
-import com.ah.dagbow.Common.Choice;
 
-import org.jgrapht.*;
-import org.jgrapht.graph.*;
-
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,12 +25,10 @@ public class MainActivity extends AppCompatActivity {
     private final static String TAG = MainActivity.class.getSimpleName();
 
     public int option = 0;
-
-    private boolean nightMode = true;
-    private SharedPreferences sharedPref;
-
     public List<Choice> PlayerChoices = new ArrayList<>();
     public Choice c_001_1, c_002_1, c_003_1, c_004_1, c_004_2, c_005_1,c_005_2,c_006_1,c_006_2,c_007_1,c_007_2;
+    private boolean nightMode = true;
+    private SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,13 +54,13 @@ public class MainActivity extends AppCompatActivity {
         ft.add(R.id.fragmentContainer, new MainFragment(), "MainFragment");
         ft.commit();
 
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+//        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+//                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+//                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+//                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+//                | View.SYSTEM_UI_FLAG_FULLSCREEN
+//                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
 
     public void newStoryFunc() {

@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Daggers &amp; Bows</string>
+    <string name="app_name">Daggers &amp; Bow</string>
 
-    <string name="splash">Daggers and Bows</string>
+    <string name="splash">Daggers and Bow</string>
     <string name="author">Author: Alireza Sani</string>
     <string name="app_dev">App dev: Hamid Sani</string>
     <string name="company_name">Company: A&amp;H</string>
@@ -13,7 +13,7 @@
     <string name="day_night_mode">Day/Night Mode</string>
 
 
-    <string name="chapter_1">Chapter 1</string>
+    <string name="chapter_1">The end and the beginning &#8230;</string>
     <string name="chapter_1_1">The end and the beginning</string>
     <string name="chapter_1_1t">The wind had spread the horrid smell, permeating through the compound.
         It smelled of death and decay. Joth slowly opened his eyes. First the world was blurry but soon his eyes got used to the dark surroundings.

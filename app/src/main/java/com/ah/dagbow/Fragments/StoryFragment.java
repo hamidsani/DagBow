@@ -23,6 +23,7 @@ public class StoryFragment extends Fragment {
 
     private final String TAG = StoryFragment.class.getSimpleName();
     public LinearLayout linearLayout;
+    public TextView title;
     //public ProgressDialog progress;
 
     public StoryFragment() {
@@ -43,11 +44,14 @@ public class StoryFragment extends Fragment {
         MainActivity mainAct = (MainActivity) getActivity();
         Log.d(TAG, Integer.toString(mainAct.PlayerChoices.size()));
         linearLayout = v.findViewById(R.id.body);
+        title = v.findViewById(R.id.title);
         draw(mainAct.PlayerChoices.get(mainAct.PlayerChoices.size() - 1));
         return v;
     }
 
     private void draw(final Choice choice){
+
+        title.setText("Chapter 1");
 
         Log.d(TAG,choice.getID());
         Log.d(TAG,choice.getName());

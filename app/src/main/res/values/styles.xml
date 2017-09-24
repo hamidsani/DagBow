@@ -3,14 +3,24 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">@color/off_white</item>
         <item name="colorPrimary">@color/white</item>
-        <item name="android:textColorPrimary">@color/black_background</item>
+        <item name="android:textColor">@color/black_background</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
     </style>
 
 
     <style name="AppTheme.Dark" parent="Theme.AppCompat">
         <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">@color/black_overlay</item>
         <item name="colorPrimary">@color/black_background</item>
-        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
     </style>
 </resources>
