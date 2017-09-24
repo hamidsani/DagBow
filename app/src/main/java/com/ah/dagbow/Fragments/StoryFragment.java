@@ -1,6 +1,5 @@
 package com.ah.dagbow.Fragments;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.graphics.Typeface;
@@ -12,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -42,7 +42,7 @@ public class StoryFragment extends Fragment {
 
         MainActivity mainAct = (MainActivity) getActivity();
         Log.d(TAG, Integer.toString(mainAct.PlayerChoices.size()));
-        linearLayout =  (LinearLayout) v.findViewById(R.id.body);
+        linearLayout = v.findViewById(R.id.body);
         draw(mainAct.PlayerChoices.get(mainAct.PlayerChoices.size() - 1));
         return v;
     }
@@ -100,6 +100,10 @@ public class StoryFragment extends Fragment {
                         ft.addToBackStack(null).commit();
                     }});
             }
+        } else {   // if there are no children then assume that the user has died! Death screen
+            ImageView image = new ImageView(getActivity());
+            image.setImageResource(R.drawable.death_428x640);
+            (linearLayout).addView(image);
         }
 
     }
