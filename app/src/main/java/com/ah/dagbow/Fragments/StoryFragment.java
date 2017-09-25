@@ -24,6 +24,8 @@ public class StoryFragment extends Fragment {
     private final String TAG = StoryFragment.class.getSimpleName();
     public LinearLayout linearLayout;
     public TextView title;
+    public Button menuBtn;
+    public Button statsBtn;
     //public ProgressDialog progress;
 
     public StoryFragment() {
@@ -45,7 +47,25 @@ public class StoryFragment extends Fragment {
         Log.d(TAG, Integer.toString(mainAct.PlayerChoices.size()));
         linearLayout = v.findViewById(R.id.body);
         title = v.findViewById(R.id.title);
+        menuBtn = v.findViewById(R.id.menu);
+        menuBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "menu Button Pressed");
+                (getActivity()).onBackPressed();
+            }
+        });
+        statsBtn = v.findViewById(R.id.stats);
+        statsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "Showing stats");
+                Log.d(TAG, ((MainActivity) getActivity()).hero.wound.toString());
+            }
+        });
         draw(mainAct.PlayerChoices.get(mainAct.PlayerChoices.size() - 1));
+
+
         return v;
     }
 

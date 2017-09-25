@@ -10,7 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import com.ah.dagbow.Common.Character;
 import com.ah.dagbow.Common.Choice;
+import com.ah.dagbow.Common.Enum;
+import com.ah.dagbow.Common.MicroChoice;
+import com.ah.dagbow.Common.Outcome;
 import com.ah.dagbow.Fragments.MainFragment;
 import com.ah.dagbow.Fragments.StoryFragment;
 
@@ -24,9 +28,11 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private final static String TAG = MainActivity.class.getSimpleName();
 
-    public int option = 0;
     public List<Choice> PlayerChoices = new ArrayList<>();
     public Choice c_001_1, c_002_1, c_003_1, c_004_1, c_004_2, c_005_1,c_005_2,c_006_1,c_006_2,c_007_1,c_007_2;
+    public MicroChoice mc_006_1_a, mc_006_1_b, mc_007_1_a, mc_007_1_b;
+    public Outcome o_004_1, o_004_2;
+    public Character hero = new Character();
     private boolean nightMode = true;
     private SharedPreferences sharedPref;
 
@@ -131,15 +137,21 @@ public class MainActivity extends AppCompatActivity {
         c_003_1 = new Choice("n003_1", res.getString(R.string.chapter_1_3), res.getString(R.string.chapter_1_3t));
 
         c_004_1 = new Choice("n004_1", res.getString(R.string.chapter_1_4a), res.getString(R.string.chapter_1_4at) + res.getString(R.string.chapter_1_4st));
+        o_004_1 = new Outcome(hero, Enum.stats.WOUND, Enum.change.EQUAL, Enum.wound.CAUTERIZED);
         c_004_2 = new Choice("n004_2", res.getString(R.string.chapter_1_4b), res.getString(R.string.chapter_1_4bt) + res.getString(R.string.chapter_1_4st));
+        o_004_2 = new Outcome(hero, Enum.stats.WOUND, Enum.change.EQUAL, Enum.wound.STITCHED);
 
         c_005_1 = new Choice("n005_1", res.getString(R.string.chapter_1_5a), res.getString(R.string.chapter_1_5at));
         c_005_2 = new Choice("n005_2", res.getString(R.string.chapter_1_5b), res.getString(R.string.chapter_1_5bt));
 
-        c_006_1 = new Choice("n006_1", res.getString(R.string.chapter_1_6a), res.getString(R.string.chapter_1_6at));
+        c_006_1 = new Choice("n006_1", res.getString(R.string.chapter_1_6a), res.getString(R.string.chapter_1_6a_preT), "", res.getString(R.string.chapter_1_6a_postT));
+        mc_006_1_a = new MicroChoice("mc_006_1_a", res.getString(R.string.chapter_1_6a_uCa), hero, Enum.stats.WOUND, Enum.wound.CAUTERIZED);
+        mc_006_1_b = new MicroChoice("mc_006_1_b", res.getString(R.string.chapter_1_6a_uCb), hero, Enum.stats.WOUND, Enum.wound.STITCHED);
         c_006_2 = new Choice("n006_2", res.getString(R.string.chapter_1_6b), res.getString(R.string.chapter_1_6bt));
 
-        c_007_1 = new Choice("n007_1", res.getString(R.string.chapter_1_7a), res.getString(R.string.chapter_1_7at));
+        c_007_1 = new Choice("n007_1", res.getString(R.string.chapter_1_7a), res.getString(R.string.chapter_1_7a_preT), "", res.getString(R.string.chapter_1_7a_postT));
+        mc_007_1_a = new MicroChoice("mc_007_1_a", res.getString(R.string.chapter_1_7a_uCa), hero, Enum.stats.WOUND, Enum.wound.CAUTERIZED);
+        mc_007_1_b = new MicroChoice("mc_007_1_b", res.getString(R.string.chapter_1_7a_uCb), hero, Enum.stats.WOUND, Enum.wound.STITCHED);
         c_007_2 = new Choice("n007_2", res.getString(R.string.chapter_1_7b), res.getString(R.string.chapter_1_7bt));
 
         // add the vertices
@@ -150,8 +162,10 @@ public class MainActivity extends AppCompatActivity {
         c_003_1.addChild(c_004_1);
         c_003_1.addChild(c_004_2);
 
+        c_004_1.addOutcome(o_004_1);
         c_004_1.addChild(c_005_1);
         c_004_1.addChild(c_005_2);
+        c_004_2.addOutcome(o_004_2);
         c_004_2.addChild(c_005_1);
         c_004_2.addChild(c_005_2);
 
@@ -159,6 +173,11 @@ public class MainActivity extends AppCompatActivity {
         c_005_1.addChild(c_006_2);
 
         c_006_1.addChild(c_007_1);
+        c_006_1.addMicroChoice(mc_006_1_a);
+        c_006_1.addMicroChoice(mc_006_1_b);
         c_006_1.addChild(c_007_2);
+
+        c_007_1.addMicroChoice(mc_007_1_a);
+        c_007_1.addMicroChoice(mc_007_1_b);
     }
 }

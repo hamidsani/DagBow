@@ -166,7 +166,7 @@
 
 
     <string name="chapter_1_6a">Remain Silent</string>
-    <string name="chapter_1_6at">Joth remained silent and frozen in his place.
+    <string name="chapter_1_6a_preT">Joth remained silent and frozen in his place.
         Moments felt like hours as the two guards scanned the darkness for anything that might stand out.
         “Are you sure you saw something, boy? Or is this another one of your tricks?” Asked the guard from his friend. \n\n
 
@@ -191,7 +191,11 @@
         After a few moments Joth begins to move  but takes him time as he is now aware of his wound.
         He makes his way around the camp without a hitch and soon he is back on the path and distancing himself from the pair as fast as he can.\n\n
 
-        Joth gets to the outskirts of the village. His [cauterized/stitched] wound was acting up by now.
+        Joth gets to the outskirts of the village. His</string>
+
+    <string name="chapter_1_6a_uCa">&#160;cauterized&#160;</string>
+    <string name="chapter_1_6a_uCb">&#160;stitched&#160;</string>
+    <string name="chapter_1_6a_postT">wound was acting up by now.
         He could feel some fluid running down his body and yet the village and an alchemist were so close that Joth suppressed all feelings of pain and disgust just to get closer to the village.
         The village had a short wall protecting its surroundings.
         It was more to mark the edge of the village than a defensive structure and it could never protect the villagers from a determined army but against small raids and local bandits, this structure could serve a vital purpose.
@@ -231,7 +235,7 @@
     </string>
 
     <string name="chapter_1_7a">Rush the guard and press the advantage</string>
-    <string name="chapter_1_7at">Joth took off running towards the wall and climb over it before the middle-aged guard awoke from the commotion.
+    <string name="chapter_1_7a_preT">Joth took off running towards the wall and climb over it before the middle-aged guard awoke from the commotion.
         Before he could level his spear Joth rushed in close to where he could hear the fellow breathing.
         Joth sliced at the man’s neck before jabbing the blade into his neck.  The man bled and fell into Joth’s arms.
         He should hid the body away from the village but Joth was worried about his wound and there was no possible way he could get rid of the body in such a short time.
@@ -261,6 +265,32 @@
         “Her grandfather took her away during the invasion. My dad was worried for her.”  Joth fished his words worried about the state of his wound.\n\n
     </string>
 
+    <string name="chapter_1_7a_uCa">“You burned yourself you silly little fool!
+        Yes, the heat can seal the wound but it can open the body to deadly miasma and infection you idiot.
+        It’ll take three weeks to seal the wound properly and make sure you’re in a fighting condition.
+        Next time you decided to burn yourself think first and then act.
+        The good news is that whoever did that to you missed your kidneys judging by the trajectory of the wound and the fact that you are still standing.
+        You also managed to burn your kidneys so that is good.  Either way I have to work overtime to put you back together.”\n\n
+    </string>
+
+    <string name="chapter_1_7a_uCb">“You stitched yourself without cleaning the wound first?
+        It was good thinking to sew the wound but both the wound and the equipment needs to be heated and doused with potion to insure the deadly miasma does not cause an infection.
+        I guess you can’t be choosy in the field of battle but still one should try.
+        It’ll take three weeks to seal the wound properly and make sure you’re in a fighting condition.
+        The good news is that whoever did that to you missed your kidneys judging by the trajectory of the wound and the fact that you are still standing.
+        You did a fine job stitching yourself even though I can see signs of you flinching.
+        Still you seemed to have kept the stitches pretty neat.
+        Either way I have to work overtime to put you back together.”\n\n
+    </string>
+
+    <string name="chapter_1_7a_postT">“You can have one of the patient’s beds down in the basement. How are you paying for all this?”
+        Asked the old man before he saw a worried look in Joth’s eyes. “Don’t worry about the pay. It’s all on me.
+        You just get better and get that crazy tomboy half-sister of yours from her grandfather and we can call it all even.
+        Taking care of your sister is the closest I’ve come to having a son. She is a handful.
+        If you sit back her grandfather might let go of her once he realizes what he’s gotten himself into with that little dragon.”
+        Both Joth and the old man burst into laughter and Joth’s wound hurt with each laughter.\n\n
+    </string>
+
     <string name="chapter_1_7b">Wait and asses the surroundings before challenging the man to a fair fight </string>
     <string name="chapter_1_7bt">There wasn’t a soul to be seen around other than a local bird that nearly gave Joth the fright of his life.
         Joth observed the surroundings and decided it was time to strike. The guard eventually woke and he saw Joth rushing the walls.
@@ -272,32 +302,6 @@
         Joth fell to the ground but the wall of spears did not break. They wait for the archers to let arrows loose again.\n\n
 
         YOU DIED
-    </string>
-
-    <string name="chapter_1_7sat">“You burned yourself you silly little fool!
-        Yes, the heat can seal the wound but it can open the body to deadly miasma and infection you idiot.
-        It’ll take three weeks to seal the wound properly and make sure you’re in a fighting condition.
-        Next time you decided to burn yourself think first and then act.
-        The good news is that whoever did that to you missed your kidneys judging by the trajectory of the wound and the fact that you are still standing.
-        You also managed to burn your kidneys so that is good.  Either way I have to work overtime to put you back together.”\n\n
-    </string>
-
-    <string name="chapter_1_7sbt">“You stitched yourself without cleaning the wound first?
-        It was good thinking to sew the wound but both the wound and the equipment needs to be heated and doused with potion to insure the deadly miasma does not cause an infection.
-        I guess you can’t be choosy in the field of battle but still one should try.
-        It’ll take three weeks to seal the wound properly and make sure you’re in a fighting condition.
-        The good news is that whoever did that to you missed your kidneys judging by the trajectory of the wound and the fact that you are still standing.
-        You did a fine job stitching yourself even though I can see signs of you flinching.
-        Still you seemed to have kept the stitches pretty neat.
-        Either way I have to work overtime to put you back together.”\n\n
-    </string>
-
-    <string name="chapter_1_7st">“You can have one of the patient’s beds down in the basement. How are you paying for all this?”
-        Asked the old man before he saw a worried look in Joth’s eyes. “Don’t worry about the pay. It’s all on me.
-        You just get better and get that crazy tomboy half-sister of yours from her grandfather and we can call it all even.
-        Taking care of your sister is the closest I’ve come to having a son. She is a handful.
-        If you sit back her grandfather might let go of her once he realizes what he’s gotten himself into with that little dragon.”
-        Both Joth and the old man burst into laughter and Joth’s wound hurt with each laughter.\n\n
     </string>
 
 </resources>

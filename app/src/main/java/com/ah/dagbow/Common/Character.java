@@ -6,5 +6,17 @@ package com.ah.dagbow.Common;
  */
 
 public class Character {
-    public int wound = 0;      // 1 = cauterized, 2 = stitch
+    public Enum.wound wound;
+
+    public Character() {
+        wound = Enum.wound.OPEN;
+    }
+
+    public void set(Enum.stats inputEnum, Object value) {
+        switch (inputEnum) {
+            case WOUND:
+                wound = (Enum.wound) value;
+                break;
+        }
+    }
 }
