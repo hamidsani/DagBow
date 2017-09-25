@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ah.dagbow.Common.Choice;
 import com.ah.dagbow.MainActivity;
@@ -61,6 +62,8 @@ public class StoryFragment extends Fragment {
             public void onClick(View v) {
                 Log.d(TAG, "Showing stats");
                 Log.d(TAG, ((MainActivity) getActivity()).hero.wound.toString());
+                Toast toast = Toast.makeText(getActivity().getBaseContext(), ((MainActivity) getActivity()).hero.wound.toString(), Toast.LENGTH_SHORT);
+                toast.show();
             }
         });
         draw(mainAct.PlayerChoices.get(mainAct.PlayerChoices.size() - 1));

@@ -19,4 +19,8 @@ public class Character {
                 break;
         }
     }
+
+    public void reset() {
+        wound = Enum.wound.OPEN;
+    }
 }

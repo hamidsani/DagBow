@@ -75,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
         PlayerChoices.clear();
         PlayerChoices.add(c_001_1);
 
+        hero.reset();
+
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out, android.R.animator.fade_in, android.R.animator.fade_out);
         ft.replace(R.id.fragmentContainer, new StoryFragment(), "StoryFragment");
