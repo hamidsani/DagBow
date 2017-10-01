@@ -6,6 +6,7 @@ package com.ah.dagbow.Common;
  */
 
 public class Character {
+    private String name;
     private Enum.wound wound;
     private int chapter;
 
@@ -15,6 +16,8 @@ public class Character {
 
     public void set(Enum.stats inputEnum, Object value) {
         switch (inputEnum) {
+            case NAME:
+                name = (String) value;
             case WOUND:
                 wound = (Enum.wound) value;
                 break;
@@ -27,6 +30,9 @@ public class Character {
     public Object get(Enum.stats inputEnum) {
         Object output = new Object();
         switch (inputEnum) {
+            case NAME:
+                output = name;
+                break;
             case WOUND:
                 output = wound;
                 break;
@@ -39,6 +45,7 @@ public class Character {
     }
 
     public void reset() {
+        name = "Joth";
         wound = Enum.wound.OPEN;
         chapter = 1;
     }

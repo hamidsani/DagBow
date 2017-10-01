@@ -16,7 +16,6 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ah.dagbow.Common.Choice;
 import com.ah.dagbow.Common.Enum;
@@ -67,9 +66,11 @@ public class StoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "Showing stats");
-                Log.d(TAG, ((MainActivity) getActivity()).hero.get(Enum.stats.WOUND).toString());
-                Toast toast = Toast.makeText(getActivity().getBaseContext(), ((MainActivity) getActivity()).hero.get(Enum.stats.WOUND).toString(), Toast.LENGTH_SHORT);
-                toast.show();
+                //Log.d(TAG, ((MainActivity) getActivity()).hero.get(Enum.stats.WOUND).toString());
+                //Toast toast = Toast.makeText(getActivity().getBaseContext(), ((MainActivity) getActivity()).hero.get(Enum.stats.WOUND).toString(), Toast.LENGTH_SHORT);
+                //toast.show();
+
+                ((MainActivity) getActivity()).statsFunc();
             }
         });
         draw(mainAct.PlayerChoices.get(mainAct.PlayerChoices.size() - 1));

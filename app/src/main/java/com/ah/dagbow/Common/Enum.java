@@ -13,6 +13,6 @@ public interface Enum {
     }
 
     enum stats {
-        WOUND, CHAPTER
+        NAME, WOUND, CHAPTER
     }
 }

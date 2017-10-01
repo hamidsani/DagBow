@@ -16,6 +16,7 @@ import com.ah.dagbow.Common.Enum;
 import com.ah.dagbow.Common.MicroChoice;
 import com.ah.dagbow.Common.Outcome;
 import com.ah.dagbow.Fragments.MainFragment;
+import com.ah.dagbow.Fragments.StatsFragment;
 import com.ah.dagbow.Fragments.StoryFragment;
 
 import java.util.ArrayList;
@@ -104,6 +105,15 @@ public class MainActivity extends AppCompatActivity {
         }
         startActivity(new Intent(this, MainActivity.class));
         finish();
+    }
+
+    public void statsFunc() {
+        Log.d(TAG, "statsFunc()");
+
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out, android.R.animator.fade_in, android.R.animator.fade_out);
+        ft.replace(R.id.fragmentContainer, new StatsFragment(), "StatsFragment");
+        ft.addToBackStack(null).commit();
     }
 
     //Here is the code for turning this activity into immersion mode
