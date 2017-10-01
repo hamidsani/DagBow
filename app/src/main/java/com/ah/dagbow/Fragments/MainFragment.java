@@ -1,9 +1,7 @@
 package com.ah.dagbow.Fragments;
 
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,7 +33,7 @@ public class MainFragment extends Fragment {
         View v = inflater.inflate(R.layout.main, container, false);
 
         /* New Journey! Button */
-        final Button newGameBtn = (Button) v.findViewById(R.id.new_button);
+        final Button newGameBtn = v.findViewById(R.id.new_button);
         newGameBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +43,7 @@ public class MainFragment extends Fragment {
         });
 
         /* Continue button */
-        final Button contBtn = (Button) v.findViewById(R.id.cont_button);
+        final Button contBtn = v.findViewById(R.id.cont_button);
         if(((MainActivity) getActivity()).PlayerChoices.size() == 0){
             contBtn.setAlpha(.5f);
             contBtn.setClickable(false);
@@ -60,7 +58,7 @@ public class MainFragment extends Fragment {
         });
 
         /* Journey Overview Button */
-        final Button overviewBtn = (Button) v.findViewById(R.id.overview_button);
+        final Button overviewBtn = v.findViewById(R.id.overview_button);
         if(((MainActivity) getActivity()).PlayerChoices.size() == 0){
             contBtn.setAlpha(.5f);
             contBtn.setClickable(false);
@@ -74,8 +72,9 @@ public class MainFragment extends Fragment {
             }
         });
 
+        //TODO: This button should not reset the game
         /* Day/Night Mode Button */
-        final Button dayNightBtn = (Button) v.findViewById(R.id.day_night_button);
+        final Button dayNightBtn = v.findViewById(R.id.day_night_button);
         dayNightBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -25,7 +25,7 @@ public class MicroChoice {
     public String getOutput() {
         switch (cStat) {
             case WOUND:
-                if (hero.wound == tConditional) sOutput = sContent;
+                if (hero.get(Enum.stats.WOUND) == tConditional) sOutput = sContent;
                 break;
             default:
                 sOutput = "";

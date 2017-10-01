@@ -12,6 +12,11 @@
     <string name="achievements_button">Achievements</string>
     <string name="day_night_mode">Day/Night Mode</string>
 
+    <string name="back">Back</string>
+    <string name="menu">Menu</string>
+    <string name="stats">Stats</string>
+    <string name="chapter">Chapter %s</string>
+
 
     <string name="chapter_1">The end and the beginning &#8230;</string>
     <string name="chapter_1_1">The end and the beginning</string>

@@ -13,10 +13,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ah.dagbow.Common.Choice;
+import com.ah.dagbow.Common.Enum;
 import com.ah.dagbow.MainActivity;
 import com.ah.dagbow.R;
 
@@ -24,7 +27,7 @@ public class StoryFragment extends Fragment {
 
     private final String TAG = StoryFragment.class.getSimpleName();
     public LinearLayout linearLayout;
-    public TextView title;
+    public TextView chapter;
     public Button menuBtn;
     public Button statsBtn;
     //public ProgressDialog progress;
@@ -41,13 +44,16 @@ public class StoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        //TODO: add stats fragment
+        //TODO: add story overview fragment
+
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.story, container, false);
 
         MainActivity mainAct = (MainActivity) getActivity();
         Log.d(TAG, Integer.toString(mainAct.PlayerChoices.size()));
         linearLayout = v.findViewById(R.id.body);
-        title = v.findViewById(R.id.title);
+        chapter = v.findViewById(R.id.chapter);
         menuBtn = v.findViewById(R.id.menu);
         menuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,8 +67,8 @@ public class StoryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "Showing stats");
-                Log.d(TAG, ((MainActivity) getActivity()).hero.wound.toString());
-                Toast toast = Toast.makeText(getActivity().getBaseContext(), ((MainActivity) getActivity()).hero.wound.toString(), Toast.LENGTH_SHORT);
+                Log.d(TAG, ((MainActivity) getActivity()).hero.get(Enum.stats.WOUND).toString());
+                Toast toast = Toast.makeText(getActivity().getBaseContext(), ((MainActivity) getActivity()).hero.get(Enum.stats.WOUND).toString(), Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
@@ -73,8 +79,8 @@ public class StoryFragment extends Fragment {
     }
 
     private void draw(final Choice choice){
-
-        title.setText("Chapter 1");
+        String chapterNum = String.format(getResources().getString(R.string.chapter), ((MainActivity) getActivity()).hero.get(Enum.stats.CHAPTER).toString());
+        chapter.setText(chapterNum);
 
         Log.d(TAG,choice.getID());
         Log.d(TAG,choice.getName());
@@ -104,15 +110,34 @@ public class StoryFragment extends Fragment {
         (linearLayout).addView(body);
 
         if (choice.getNumberOfChildren() != 0){
+
+            params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            RadioGroup choiceBox = new RadioGroup(getActivity());
+            choiceBox.setOrientation(RadioGroup.VERTICAL);
+            choiceBox.setLayoutParams(params);
+
             for (int i = 0; i < choice.getNumberOfChildren(); i++){
-                Button options = new Button(getActivity());
+
+                if (i != 0) {
+                    View v = new View(getActivity());
+                    params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 5);
+                    params.setMargins(0, 0, 0, padding(15));
+                    v.setLayoutParams(params);
+
+                    final TypedValue value = new TypedValue();
+                    getActivity().getTheme().resolveAttribute(android.R.attr.textColor, value, true);
+                    v.setBackgroundColor(value.data);
+                    (choiceBox).addView(v);
+                }
+
+                RadioButton options = new RadioButton(getActivity());
                 options.setText((choice.getChild(i)).getName());
-                params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
                 if (i == choice.getNumberOfChildren()-1)        params.setMargins(0, 0, 0, padding(200));
                 else                                            params.setMargins(0, 0, 0, padding(15));
                 options.setLayoutParams(params);
-                (linearLayout).addView(options);
+                (choiceBox).addView(options);
 
                 final int iter = i;
                 options.setOnClickListener(new View.OnClickListener() {
@@ -127,6 +152,8 @@ public class StoryFragment extends Fragment {
                         ft.addToBackStack(null).commit();
                     }});
             }
+
+            (linearLayout).addView(choiceBox);
         } else {   // if there are no children then assume that the user has died! Death screen
             ImageView image = new ImageView(getActivity());
             image.setImageResource(R.drawable.death_428x640);
