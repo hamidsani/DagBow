@@ -33,9 +33,10 @@ public class MainActivity extends AppCompatActivity {
     public Choice c_001_1, c_002_1, c_003_1, c_004_1, c_004_2, c_005_1,c_005_2,c_006_1,c_006_2,c_007_1,c_007_2;
     public MicroChoice mc_006_1_a, mc_006_1_b, mc_007_1_a, mc_007_1_b;
     public Outcome o_004_1, o_004_2;
-    public Character hero = new Character();
+    public static Character hero = new Character();
     private boolean nightMode = true;
     private SharedPreferences sharedPref;
+    public int animation = 1;           // 1 = sliding animation, 2 = fade in
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
         // TODO: Add Google sign in to save data
 
         FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out,android.R.animator.fade_in, android.R.animator.fade_out);
+        if (animation == 1)             ft.setCustomAnimations(R.animator.enter_from_right, R.animator.exit_to_left, R.animator.enter_from_left, R.animator.exit_to_right);
+        else                            ft.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out, android.R.animator.fade_in, android.R.animator.fade_out);
         ft.add(R.id.fragmentContainer, new MainFragment(), "MainFragment");
         ft.commit();
     }
@@ -111,7 +113,8 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "statsFunc()");
 
         FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out, android.R.animator.fade_in, android.R.animator.fade_out);
+        if (animation == 1)             ft.setCustomAnimations(R.animator.enter_from_right, R.animator.exit_to_left, R.animator.enter_from_left, R.animator.exit_to_right);
+        else                            ft.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out, android.R.animator.fade_in, android.R.animator.fade_out);
         ft.replace(R.id.fragmentContainer, new StatsFragment(), "StatsFragment");
         ft.addToBackStack(null).commit();
     }
@@ -183,5 +186,10 @@ public class MainActivity extends AppCompatActivity {
 
         c_007_1.addMicroChoice(mc_007_1_a);
         c_007_1.addMicroChoice(mc_007_1_b);
+    }
+
+    public int padding(int sizeInDp){
+        float scale = getResources().getDisplayMetrics().density;
+        return ((int) (sizeInDp*scale + 0.5f));
     }
 }

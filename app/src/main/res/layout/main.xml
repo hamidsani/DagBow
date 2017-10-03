@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.ah.dagbow.Fragments.SlidingLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frame"
     android:layout_width="match_parent"
@@ -80,4 +80,4 @@
 
     </RelativeLayout>
 
-</FrameLayout>
+</com.ah.dagbow.Fragments.SlidingLayout>

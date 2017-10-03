@@ -1,11 +1,17 @@
 package com.ah.dagbow.Common;
 
+import android.content.Context;
+import android.content.res.Resources;
+
+import com.ah.dagbow.MainActivity;
+import com.ah.dagbow.R;
+
 /**
  * Created by HaMiD on 9/17/2017.
  * this class contains the attributes of the character throughout the game
  */
 
-public class Character {
+public class Character extends MainActivity {
     private String name;
     private Enum.wound wound;
     private int chapter;
@@ -42,6 +48,48 @@ public class Character {
         }
 
         return output;
+    }
+
+
+    public String getFieldName(Enum.stats inputEnum){
+        String output = "";
+        switch (inputEnum) {
+            case NAME:
+                output = "Name: ";
+                break;
+            case WOUND:
+                output = "Attributes:    ";
+                break;
+            case CHAPTER:
+                output = "Chapter:";
+                break;
+        }
+
+        return output;
+    }
+
+    public String getField(Enum.stats inputEnum){
+        String output = "";
+        switch (inputEnum) {
+            case NAME:
+                output = "Joth";
+                break;
+            case WOUND:
+                if (MainActivity.hero.get(Enum.stats.WOUND) == Enum.wound.OPEN)                 output = "Bleeding";
+                else if (MainActivity.hero.get(Enum.stats.WOUND) == Enum.wound.CAUTERIZED)      output = "CAUTERIZED";
+                else if (MainActivity.hero.get(Enum.stats.WOUND) == Enum.wound.STITCHED)        output = "Stitched";
+                else                                                                            output = "Healthy";
+                break;
+            case CHAPTER:
+                output = "1";
+                break;
+        }
+
+        return output;
+    }
+
+    public int getNumFields(){
+        return Enum.stats.values().length;
     }
 
     public void reset() {

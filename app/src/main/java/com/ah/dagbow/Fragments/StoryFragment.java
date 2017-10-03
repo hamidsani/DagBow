@@ -80,7 +80,7 @@ public class StoryFragment extends Fragment {
     }
 
     private void draw(final Choice choice){
-        String chapterNum = String.format(getResources().getString(R.string.chapter), ((MainActivity) getActivity()).hero.get(Enum.stats.CHAPTER).toString());
+        String chapterNum = String.format(getResources().getString(R.string.chapter), MainActivity.hero.get(Enum.stats.CHAPTER).toString());
         chapter.setText(chapterNum);
 
         Log.d(TAG,choice.getID());
@@ -96,7 +96,7 @@ public class StoryFragment extends Fragment {
             title.setLayoutParams(params);
             title.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
             title.setTypeface(Typeface.DEFAULT_BOLD);
-            title.setPadding(0, padding(20), 0, padding(20));
+            title.setPadding(0, ((MainActivity) getActivity()).padding(20), 0, ((MainActivity) getActivity()).padding(20));
             title.setGravity(Gravity.CENTER_HORIZONTAL);
             (linearLayout).addView(title);
         }
@@ -104,7 +104,7 @@ public class StoryFragment extends Fragment {
         TextView body = new TextView(getActivity());
         body.setText(choice.getContent());
         body.setVerticalScrollBarEnabled(false);
-        params.setMargins(0, 0, 0, padding(50));
+        params.setMargins(0, 0, 0, ((MainActivity) getActivity()).padding(50));
         body.setLayoutParams(params);
         body.setTextSize(TypedValue.COMPLEX_UNIT_SP,16);
         body.setGravity(Gravity.START);
@@ -122,7 +122,7 @@ public class StoryFragment extends Fragment {
                 if (i != 0) {
                     View v = new View(getActivity());
                     params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 5);
-                    params.setMargins(0, 0, 0, padding(15));
+                    params.setMargins(0, 0, 0, ((MainActivity) getActivity()).padding(15));
                     v.setLayoutParams(params);
 
                     final TypedValue value = new TypedValue();
@@ -135,8 +135,8 @@ public class StoryFragment extends Fragment {
                 options.setText((choice.getChild(i)).getName());
                 params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
-                if (i == choice.getNumberOfChildren()-1)        params.setMargins(0, 0, 0, padding(200));
-                else                                            params.setMargins(0, 0, 0, padding(15));
+                if (i == choice.getNumberOfChildren()-1)        params.setMargins(0, 0, 0, ((MainActivity) getActivity()).padding(200));
+                else                                            params.setMargins(0, 0, 0, ((MainActivity) getActivity()).padding(15));
                 options.setLayoutParams(params);
                 (choiceBox).addView(options);
 
@@ -148,7 +148,10 @@ public class StoryFragment extends Fragment {
                         ((MainActivity) getActivity()).PlayerChoices.add(choice.getChild(iter));
                         getFragmentManager().popBackStack();
                         FragmentTransaction ft = getFragmentManager().beginTransaction();
-                        ft.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out, android.R.animator.fade_in, android.R.animator.fade_out);
+                        //if (((MainActivity) getActivity()).animation == 1)
+                        //    ft.setCustomAnimations(R.animator.enter_from_right, R.animator.exit_to_left, R.animator.enter_from_left, R.animator.exit_to_right);
+                        //else
+                            ft.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out, android.R.animator.fade_in, android.R.animator.fade_out);
                         ft.replace(R.id.fragmentContainer, new StoryFragment(), "StoryFragment");
                         ft.addToBackStack(null).commit();
                     }});
@@ -161,11 +164,6 @@ public class StoryFragment extends Fragment {
             (linearLayout).addView(image);
         }
 
-    }
-
-    private int padding(int sizeInDp){
-        float scale = getResources().getDisplayMetrics().density;
-        return ((int) (sizeInDp*scale + 0.5f));
     }
 
     @Override
