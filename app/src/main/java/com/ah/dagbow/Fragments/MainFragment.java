@@ -60,14 +60,14 @@ public class MainFragment extends Fragment {
         /* Journey Overview Button */
         final Button overviewBtn = v.findViewById(R.id.overview_button);
         if(((MainActivity) getActivity()).PlayerChoices.size() == 0){
-            contBtn.setAlpha(.5f);
-            contBtn.setClickable(false);
-            contBtn.setEnabled(false);
+            overviewBtn.setAlpha(.5f);
+            overviewBtn.setClickable(false);
+            overviewBtn.setEnabled(false);
         }
-        contBtn.setOnClickListener(new View.OnClickListener() {
+        overviewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "Continue Button");
+                Log.d(TAG, "overview Button");
                 ((MainActivity)getActivity()).overviewFunc();
             }
         });

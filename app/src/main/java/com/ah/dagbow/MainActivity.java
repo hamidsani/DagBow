@@ -16,6 +16,7 @@ import com.ah.dagbow.Common.Enum;
 import com.ah.dagbow.Common.MicroChoice;
 import com.ah.dagbow.Common.Outcome;
 import com.ah.dagbow.Fragments.MainFragment;
+import com.ah.dagbow.Fragments.OverviewFragment;
 import com.ah.dagbow.Fragments.StatsFragment;
 import com.ah.dagbow.Fragments.StoryFragment;
 
@@ -28,15 +29,14 @@ import java.util.List;
  */
 public class MainActivity extends AppCompatActivity {
     private final static String TAG = MainActivity.class.getSimpleName();
-
+    public static Character hero = new Character();
     public List<Choice> PlayerChoices = new ArrayList<>();
     public Choice c_001_1, c_002_1, c_003_1, c_004_1, c_004_2, c_005_1,c_005_2,c_006_1,c_006_2,c_007_1,c_007_2;
     public MicroChoice mc_006_1_a, mc_006_1_b, mc_007_1_a, mc_007_1_b;
     public Outcome o_004_1, o_004_2;
-    public static Character hero = new Character();
+    public int animation = 1;           // 1 = sliding animation, 2 = fade in
     private boolean nightMode = true;
     private SharedPreferences sharedPref;
-    public int animation = 1;           // 1 = sliding animation, 2 = fade in
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "overviewFunc()");
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         ft.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out, android.R.animator.fade_in, android.R.animator.fade_out);
-        ft.replace(R.id.fragmentContainer, new StoryFragment(), "StoryFragment");
+        ft.replace(R.id.fragmentContainer, new OverviewFragment(), "OverviewFragment");
         ft.addToBackStack(null).commit();
     }
 

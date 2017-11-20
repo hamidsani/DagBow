@@ -12,8 +12,7 @@ import com.ah.dagbow.Common.Constants;
 import com.ah.dagbow.Fragments.SplashFragment;
 
 /**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
+ * This activity solely starts the first splash screen of the app
  */
 public class SplashActivity extends AppCompatActivity {
     private final static String TAG = SplashActivity.class.getSimpleName();

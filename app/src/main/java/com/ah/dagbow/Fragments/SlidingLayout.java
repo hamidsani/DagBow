@@ -6,11 +6,13 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 
 /**
+ * This frameLayout let's the fragment slide from side to side. This is used in the XML
  * Created by HaMiD on 10/2/2017.
  */
 
 public class SlidingLayout extends FrameLayout {
     private float xFraction = 0;
+    private ViewTreeObserver.OnPreDrawListener preDrawListener = null;
 
     public SlidingLayout(Context context) {
         super(context);
@@ -24,9 +26,6 @@ public class SlidingLayout extends FrameLayout {
                                  int defStyle) {
         super(context, attrs, defStyle);
     }
-
-    private ViewTreeObserver.OnPreDrawListener preDrawListener = null;
-
 
     public void setXFraction(float fraction) {
         this.xFraction = fraction;

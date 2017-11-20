@@ -1,116 +1,78 @@
 package com.ah.dagbow.Fragments;
 
 import android.app.Fragment;
-import android.app.FragmentTransaction;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.Log;
-import android.util.TypedValue;
-import android.view.Gravity;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import com.ah.dagbow.Common.Choice;
-import com.ah.dagbow.MainActivity;
+import com.ah.dagbow.Holder.IconTreeItemHolder;
+import com.ah.dagbow.Holder.ProfileHolder;
+import com.ah.dagbow.Holder.SelectableHeaderHolder;
+import com.ah.dagbow.Holder.SelectableItemHolder;
 import com.ah.dagbow.R;
+import com.unnamed.b.atv.model.TreeNode;
+import com.unnamed.b.atv.view.AndroidTreeView;
 
+
+/**
+ * Created by Hamid Sani.
+ * A lot of the code is taken from Bogdan Melnychuk
+ */
 public class OverviewFragment extends Fragment {
-
-    private final String TAG = OverviewFragment.class.getSimpleName();
-    public LinearLayout linearLayout;
-    //public ProgressDialog progress;
-
-    public OverviewFragment() {
-        // Required empty public constructor
-    }
+    private AndroidTreeView tView;
+    private boolean selectionModeEnabled = false;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.overview, null, false);
+        ViewGroup containerView = rootView.findViewById(R.id.container);
 
-        // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.story, container, false);
+        TreeNode root = TreeNode.root();
 
-        MainActivity mainAct = (MainActivity) getActivity();
-        Log.d(TAG, Integer.toString(mainAct.PlayerChoices.size()));
-        linearLayout =  (LinearLayout) v.findViewById(R.id.body);
-        draw(mainAct.PlayerChoices.get(mainAct.PlayerChoices.size() - 1));
-        return v;
-    }
+        TreeNode s1 = new TreeNode(new IconTreeItemHolder.IconTreeItem(R.string.ic_sd_storage, "Storage1")).setViewHolder(new ProfileHolder(getActivity()));
+        TreeNode s2 = new TreeNode(new IconTreeItemHolder.IconTreeItem(R.string.ic_sd_storage, "Storage2")).setViewHolder(new ProfileHolder(getActivity()));
+        s1.setSelectable(false);
+        s2.setSelectable(false);
 
-    private void draw(final Choice choice){
+        TreeNode folder1 = new TreeNode(new IconTreeItemHolder.IconTreeItem(R.string.ic_folder, "Folder 1")).setViewHolder(new SelectableHeaderHolder(getActivity()));
+        TreeNode folder2 = new TreeNode(new IconTreeItemHolder.IconTreeItem(R.string.ic_folder, "Folder 2")).setViewHolder(new SelectableHeaderHolder(getActivity()));
+        TreeNode folder3 = new TreeNode(new IconTreeItemHolder.IconTreeItem(R.string.ic_folder, "Folder 3")).setViewHolder(new SelectableHeaderHolder(getActivity()));
 
-        Log.d(TAG,choice.getID());
-        Log.d(TAG,choice.getName());
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
+        fillFolder(folder1);
+        fillFolder(folder2);
+        fillFolder(folder3);
 
-        if(!choice.getTitle().equals("")){
-            TextView title = new TextView(getActivity());
-            title.setText(choice.getTitle());
-            title.setLayoutParams(params);
-            title.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-            title.setTypeface(Typeface.DEFAULT_BOLD);
-            title.setPadding(0, padding(20), 0, padding(20));
-            title.setGravity(Gravity.CENTER_HORIZONTAL);
-            (linearLayout).addView(title);
-        }
+        s1.addChildren(folder1, folder2);
+        s2.addChildren(folder3);
 
-        TextView body = new TextView(getActivity());
-        body.setText(choice.getContent());
-        body.setVerticalScrollBarEnabled(false);
-        params.setMargins(0, 0, 0, padding(50));
-        body.setLayoutParams(params);
-        body.setTextSize(TypedValue.COMPLEX_UNIT_SP,16);
-        body.setGravity(Gravity.CENTER_HORIZONTAL);
-        (linearLayout).addView(body);
+        root.addChildren(s1, s2);
 
-        if (choice.getNumberOfChildren() != 0){
-            for (int i = 0; i < choice.getNumberOfChildren(); i++){
-                Button options = new Button(getActivity());
-                options.setText((choice.getChild(i)).getName());
-                params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        tView = new AndroidTreeView(getActivity(), root);
+        tView.setDefaultAnimation(true);
+        containerView.addView(tView.getView());
 
-                if (i == choice.getNumberOfChildren()-1)        params.setMargins(0, 0, 0, padding(200));
-                else                                            params.setMargins(0, 0, 0, padding(15));
-                options.setLayoutParams(params);
-                (linearLayout).addView(options);
-
-                final int iter = i;
-                options.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Log.d(TAG, "click");
-                        ((MainActivity) getActivity()).PlayerChoices.add(choice.getChild(iter));
-                        getFragmentManager().popBackStack();
-                        FragmentTransaction ft = getFragmentManager().beginTransaction();
-                        ft.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out, android.R.animator.fade_in, android.R.animator.fade_out);
-                        ft.replace(R.id.fragmentContainer, new OverviewFragment(), "StoryFragment");
-                        ft.addToBackStack(null).commit();
-                    }});
+        if (savedInstanceState != null) {
+            String state = savedInstanceState.getString("tState");
+            if (!TextUtils.isEmpty(state)) {
+                tView.restoreState(state);
             }
         }
-
+        return rootView;
     }
 
-    private int padding(int sizeInDp){
-        float scale = getResources().getDisplayMetrics().density;
-        return ((int) (sizeInDp*scale + 0.5f));
+    private void fillFolder(TreeNode folder) {
+        TreeNode file1 = new TreeNode("File1").setViewHolder(new SelectableItemHolder(getActivity()));
+        TreeNode file2 = new TreeNode("File2").setViewHolder(new SelectableItemHolder(getActivity()));
+        TreeNode file3 = new TreeNode("File3").setViewHolder(new SelectableItemHolder(getActivity()));
+        folder.addChildren(file1, file2, file3);
     }
 
     @Override
-    public void onStop() {
-        Log.d(TAG, "onStop()");
-        super.onStop();
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("tState", tView.getSaveState());
     }
 }
